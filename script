@@ -2,6 +2,7 @@
 // © marcanalella
 
 //@version=5
+//v0.1.1
 indicator("PRA", shorttitle="PRA", overlay=true)
 // Inizializza una variabile per memorizzare i massimi delle candele
 float[] candleSize = array.new_float(0)

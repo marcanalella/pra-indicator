@@ -2,7 +2,7 @@
 // © marcanalella
 
 //@version=5
-//v0.1.1
+//0.1.2
 indicator("PRA", shorttitle="PRA", overlay=true)
 // Inizializza una variabile per memorizzare i massimi delle candele
 float[] candleSize = array.new_float(0)
@@ -65,14 +65,10 @@ if barstate.islast and isDebug
 
 var id = label.new(x=bar_index, y=price_with_pips, text="PRA " + str.tostring(avgSize), textcolor=color.blue, style=label.style_none)
 label.set_xy(id, bar_index, price_with_pips)
-label.set_text(id, "PRA " + str.tostring(price_with_pips))
+label.set_text(id, "PRA " + str.tostring(avgSize) + " " + str.tostring(price_with_pips))
 label.set_textcolor(id, color.blue)
 
 var id2 = label.new(x=bar_index, y=price_with_pips2, text="PRA " + str.tostring(price_with_pips2), textcolor=color.red, style=label.style_none)
 label.set_xy(id2, bar_index, price_with_pips2)
-label.set_text(id2, "PRA " + str.tostring(price_with_pips2))
-label.set_textcolor(id2, color.red)
-
-// Plot the price with pips added
-//plot(price_with_pips, title = "Price with Pips", color = color.red, linewidth = 1)
-//plot(price_with_pips2, title = "Price with Pips", color = color.yellow, linewidth = 1)
+label.set_text(id2, "PRA -" + str.tostring(avgSize) + " " + str.tostring(price_with_pips2))
+label.set_textcolor(id2, color.red) 
